@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Your Profile</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style_addressdisplay.css') }}">
+	<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,200&family=DM+Serif+Display&display=swap" rel="stylesheet">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" 
+integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" 
+crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+</head>
+<body>
+	 <ul class="nav flex-column">
+      <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="{{ url_for('profile') }}"><i class="bi bi-person"></i> Profile</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{ url_for('address') }}"><i class="bi bi-house"></i> Address</a>
+      </li>
+   	  <li class="nav-item">
+        <a class="nav-link" href="{{ url_for('shopping_cart') }}"><i class="bi bi-cart"></i> Shopping Cart</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{ url_for('index') }}"><i class="bi bi-arrow-90deg-left"></i></i> Return to Home</a>
+      </li>
+    </ul>
+    <div class="logo">
+    	<img src="../static/logo.png">
+    </div>
+<div class="address">
+	<div class="title">
+		<h1>Your Address</h1>
+	</div>
+    <div class="displayhn"><p>House Number: <span id="housenum"></span></p></div>
+    <div class="displayst"><p>Street: <span id="stre_et"></span></p></div>
+    <div class="displaybar"><p>Barangay: <span id="brngy"></span></p></div>
+    <div class="displaycity"><p>City: <span id="ci-ty"></span></p></div>
+    <div class="displayreg"><p>Region: <span id="reg-ion"></span></p></div>
+    <div class="displayzc"><p>Zip Code: <span id="zcode"></span></p></div>
+    <button type="button" class="btn btn-primary mb-32" id="editButton">
+        <a href="{{ url_for('address_edit') }}">Edit Information</a>
+    </button>
+	</div>
+<div class="space"></div>
+</div>
+<script>
+	  window.addEventListener('load', () => {
+        const housenumber = localStorage.getItem('HN');
+        const street = localStorage.getItem('STREET');
+        const barangay = localStorage.getItem('BARANGAY');
+        const city = localStorage.getItem('CITY');
+        const region = localStorage.getItem('REGION');
+        const zipcode = localStorage.getItem('ZIPCODE');
+
+        document.getElementById('housenum').innerHTML = housenumber;
+        document.getElementById('stre_et').innerHTML = street;
+        document.getElementById('brngy').innerHTML = barangay;
+        document.getElementById('ci-ty').innerHTML = city;
+        document.getElementById('reg-ion').innerHTML = region;
+        document.getElementById('zcode').innerHTML = zipcode;
+
+    });
+</script>
+</body>
+</html>

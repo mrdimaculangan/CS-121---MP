@@ -1,0 +1,45 @@
+body {
+    background-image: url('../static/Login_background.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: 'DM Sans', 'DM Serif Display';
+    color:beige;
+}
+
+.signup-card {
+    margin: auto;
+    border-radius: 0;
+    background-color: #1c1611;
+    opacity: 0.8;
+}
+
+.card-img {
+    width: 100%;
+    height: auto;
+    object-fit: fill;
+}
+
+.card-body {
+    font-family:'DM Serif Display';
+    color: #eaddca;
+}
+
+#emailHelp.form-text {
+    color: #eaddca;
+}
+
+.btn-primary {
+    font-family: 'DM Sans';
+    background-color: #eaddca;
+    border-radius: 10px;
+    color: #1c1611;
+    border-color: #eaddca;
+    margin: 0 auto;
+    display: block;
+}
+
+.btn-primary:hover {
+    background-color: #54311d;
+    border-color: #eaddca;
+    }
