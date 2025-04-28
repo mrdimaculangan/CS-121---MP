@@ -1,0 +1,17 @@
+body{
+    background-color: #f7cdd0;
+}
+
+.navbar{
+    display: flex;
+    background-color: white;
+}
+
+.navbar-links{
+    list-style: none;
+}
+
+.navbar-links li{
+    display: inline;
+    margin-right: 20px;
+}
