@@ -1,3 +1,11 @@
+/* src/assets/fonts/fonts.css */
+@font-face {
+    font-family: 'Bayer TypeArchiType Regular';
+    src: url('../assets/Bayer\ TypeArchiType\ Regular.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
 body{
     background-color: #f7cdd0;
 }
@@ -7,11 +15,81 @@ body{
     background-color: white;
 }
 
-.navbar-links{
+.navbar-links-left,.navbar-links-right{
     list-style: none;
 }
 
-.navbar-links li{
-    display: inline;
+.navbar-links-right{
+    display: flex;
+    gap: 5px;
     margin-right: 20px;
 }
+.navbar-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.navbar h1{
+    display: flex;
+    position: absolute;
+    transform: translateX(650px);
+}
+.searchBar{
+    transform: translateX(500px);
+    height: 35px;
+    border-radius: 20px;
+    border: 1px solid black;
+}
+
+button{
+    transform: translateX(500px);
+    position: absolute;
+    margin-top: 3px;
+    border: none;
+    background: transparent;
+}
+
+.content{
+    display: flex;
+    gap: 40px;
+}
+
+.frame{
+    margin-top: -40px;
+    margin-left: 60px;
+}
+
+.productdescription {
+    margin-top: 100px;
+    color: #602f32;
+    display: flex;
+    flex-direction: column;
+    gap: 20px; 
+  }
+
+  .add{
+    background-color: #b84c65;
+    margin-left: 80px;
+    width: 160px;
+    height: 40px;
+    border-radius: 30px;
+    font-family: 'Bayer TypeArchiType Regular';
+    color: white;
+  }
+
+  .price{
+    margin-left: 20px;
+    margin-top: -10px;
+  }
+
+  .description{
+    margin-left: 80px;
+    margin-top: -10px;
+  }
+
+  .buttongroup{
+    margin-left: -430px;
+    display: flex;
+  }
