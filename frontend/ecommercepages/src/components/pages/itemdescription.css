@@ -93,3 +93,7 @@ button{
     margin-left: -430px;
     display: flex;
   }
+
+  .fav{
+    margin-top: -2px;
+  }
