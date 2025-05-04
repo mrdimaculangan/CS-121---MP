@@ -1,13 +1,13 @@
 @font-face {
     font-family: 'Bayer TypeArchiType Regular';
-    src: url('../assets/Bayer\ TypeArchiType\ Regular.otf') format('truetype');
+    src: url('../../assets/Bayer\ TypeArchiType\ Regular.otf') format('truetype');
     font-weight: normal;
     font-style: normal;
   }
 
 .profilepageContainer{
     flex: 1;
-    background-image: url('../assets/profilebg.png');
+    background-image: url('../../assets/profilebg.png');
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
@@ -102,7 +102,7 @@ box-sizing:content-box;
 margin: 0;
 }
 .pic{
-    background-image: url('../assets/sidepic.png');
+    background-image: url('../../assets/sidepic.png');
 }
 .pic img{
 max-width: 100%;

@@ -1,0 +1,12 @@
+.cartContainer{
+    flex: 1;
+    background-image: url('../../assets/profilebg.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size:cover;
+    min-height: 100vh;
+    overflow-y:hidden;
+    flex-wrap: wrap;
+    max-height: 600px;
+}
