@@ -1,0 +1,136 @@
+@font-face {
+    font-family: 'Bayer TypeArchiType Regular';
+    src: url('../assets/Bayer\ TypeArchiType\ Regular.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+@font-face {
+    font-family: 'Pinyon Script' ;
+    src: url('https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.body {
+  font-family: 'Pinyon Script', cursive, sans-serif;
+  background: url("../assets/profilebg.png") no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 0;
+  margin: 0;
+}
+
+.main {
+  width: 90%;
+  max-width: 350px;
+  height: 560px;
+  background: rgba(255, 192, 203, 0.495);
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 5px 20px 50px #0d0707;
+  position: relative;
+  transition: all 0.5s ease-in-out;
+}
+
+
+#chk {
+  display: none;
+}
+
+
+.register, .log-in {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+
+.log-in {
+  height: 100%;
+  padding-top: 40px;
+}
+
+.register {
+  height: 580px;
+  background: #eee;
+  border-radius: 60% / 20%;
+  transform: translateY(-190px);
+  transition: 0.8s ease-in-out;
+}
+
+
+.main label {
+  color: #ffffff;
+  font-size: 2.3em;
+  justify-content: center;
+  display: flex;
+  margin: 60px;
+  cursor: pointer;
+  transition: 0.5s ease-in-out;
+}
+
+.log-in label {
+  position: relative;
+  top: 0;
+  transition: all 0.5s ease-in-out;
+}
+
+.register label {
+  color: rgb(85, 55, 60);
+  transform: scale(1);
+}
+
+/* inputs */
+input {
+  width: 60%;
+  height: 20px;
+  background-color: rgb(242, 225, 228);
+  justify-content: center;
+  display: flex;
+  margin: 1px auto;
+  padding: 10px;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+}
+
+/* buttons */
+.main button {
+  width: 60%;
+  height: 40px;
+  margin: 10px auto;
+  justify-content: center;
+  display: block;
+  color: white;
+  background: #fb9fc388;
+  font-size: 1em;
+  margin-top: 12px;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: rgb(201, 101, 118);
+  transform: scale(1.05);
+}
+
+/* TRANSITIONS BASED ON CHECKBOX STATE */
+#chk:checked ~ .register {
+  transform: translateY(-600px);
+}
+
+#chk:checked ~ .register label {
+  transform: scale(1.2);
+}
+
+#chk:checked ~ .log-in label {
+  top: -90px;
+  transform: scale(1);
+}
