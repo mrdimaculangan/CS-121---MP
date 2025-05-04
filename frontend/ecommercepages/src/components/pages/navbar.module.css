@@ -4,11 +4,6 @@
     font-weight: normal;
     font-style: normal;
   }
-  
-body{
-    background-color: #f7cdd0;
-    border: none;
-}
 
 .navbar{
     display: flex;
@@ -16,23 +11,23 @@ body{
     border: none;
 }
 
-.navbar-links-left,.navbar-links-right{
+.navbarLinksLeft,.navbarLinksRight{
     list-style: none;
 }
 
-.navbar-links-right{
+.navbarLinksRight{
     display: flex;
     gap: 5px;
     margin-right: 20px;
 }
-.navbar-container{
+.navbarContainer{
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
 }
 
-.navbar h1{
+.storeName{
     display: flex;
     position: absolute;
     transform: translateX(650px);
@@ -40,6 +35,14 @@ body{
 .searchBar{
     transform: translateX(500px);
     height: 35px;
+    background: transparent;
     border-radius: 20px;
     border: 1px solid black;
+}
+.searchSubmit{
+    position: absolute;
+    background: transparent;
+    border: none;
+    transform: translateX(500px);
+    margin-top: 3px;
 }

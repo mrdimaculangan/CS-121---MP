@@ -5,46 +5,14 @@
     font-style: normal;
   }
   
-body{
+.itemContainer {
     background-color: #f7cdd0;
+    background-size: cover;
     border: none;
+    overflow: hidden;
 }
 
-.navbar{
-    display: flex;
-    background-color: white;
-    border: none;
-}
-
-.navbar-links-left,.navbar-links-right{
-    list-style: none;
-}
-
-.navbar-links-right{
-    display: flex;
-    gap: 5px;
-    margin-right: 20px;
-}
-.navbar-container{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-}
-
-.navbar h1{
-    display: flex;
-    position: absolute;
-    transform: translateX(650px);
-}
-.searchBar{
-    transform: translateX(500px);
-    height: 35px;
-    border-radius: 20px;
-    border: 1px solid black;
-}
-
-button{
+.fav, .add{
     transform: translateX(500px);
     position: absolute;
     margin-top: 3px;
