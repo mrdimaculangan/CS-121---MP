@@ -1,54 +1,42 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
+import styles from './login.module.css'; // adjust path if needed
 import Navbar from './navbar';
-import styleslogin from './login.module.css';
-
 
 const Login = () => {
-  const [showRegister, setShowRegister] = useState(false); {/* initialize states*/}
-
-  const handleToggle = () => {
-    setShowRegister(!showRegister);
-  };
+  const [showRegister, setShowRegister] = useState(false);
 
   return (
-   <div className={styleslogin.loginContainer}>
-    <Navbar/> {/* import navbar */}
+    <div className={styles.loginContainer}>
+      <Navbar />
+      <div className={styles.loginregisterBody}>
+        <div
+          className={`${styles.loginregisterMain} ${showRegister ? styles.active : ''}`}
+        >
+          {/* Login Form */}
+          <div className={styles.formPage}>
+            <form className={styles.loginForm}>
+              <label onClick={() => setShowRegister(false)}>log-in</label>
+              <input type="text" placeholder="Email" />
+              <input type="password" placeholder="Password" />
+              <button type="submit" className={styles.logInButton}>LOG IN</button>
+            </form>
+          </div>
 
-  <div className={styleslogin.loginregisterBody}>
-  <div className={styleslogin.loginregisterMain}>
-  {/* Checkbox mimic toggle */}
-  <input type="checkbox" id="chk" aria-hidden="true" checked={showRegister} onChange={handleToggle} />
-
-  {/* --------------- LOGIN --------------- */}
-  <div className={styleslogin.logIn}>
-    <form>
-      <input type="hidden" name="form_type" value="login" disabled={showRegister} className='loginInput'/>
-      <label htmlFor="chk" aria-hidden="true">log-in</label>
-      <input type="text" name="email" placeholder="Email" className='loginEmail'/><br />
-      <input type="password" name="password" placeholder="Password" className='loginPassword'/><br />
-      <button type="submit" className="logInButton">LOG IN</button>
-    </form>
-  </div> 
-
-  {/* --------------- REGISTER --------------- */}
-  <div className={styleslogin.register}>
-    <form>
-    <input type="hidden" name="form_type" value="register" disabled={!showRegister} />
-      <label htmlFor="chk" aria-hidden="true">register</label>
-      <input name="first_name" placeholder="First Name" /><br />
-      <input name="last_name" placeholder="Last Name" /><br />
-      <input name="email" placeholder="Email" /><br />
-      <input type="password" name="password" placeholder="Password" /><br />
-      <button type="submit" className='registerButton'>REGISTER</button> 
-    </form>
-  </div>
-
-  </div>
-  </div>
-  </div>
+          {/* Register Form */}
+          <div className={styles.formPage + ' ' + styles.registerForm}>
+            <form>
+              <label onClick={() => setShowRegister(true)}>register</label>
+              <input type="text" placeholder="First Name" />
+              <input type="text" placeholder="Last Name" />
+              <input type="email" placeholder="Email" />
+              <input type="password" placeholder="Password" />
+              <button type="submit" className={styles.registerButton}>REGISTER</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 };
 
-
-
-export default Login
+export default Login;
