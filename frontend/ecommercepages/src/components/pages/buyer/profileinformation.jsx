@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './profileinformation.module.css';
-import Transparent from '../assets/transparent.png';
-import Flower from '../assets/flower.png'
+import Transparent from '../../assets/transparent.png';
+import Flower from '../../assets/flower.png'
 import Navbar from './navbar';
 
 const ProfileInformation = () => {

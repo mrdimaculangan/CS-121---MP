@@ -1,9 +1,9 @@
 import React from 'react';
-import Cart from '../assets/cart.png';
-import Heart from '../assets/heart.png';
-import Home from '../assets/home.png';
-import Profile from '../assets/profile.png';
-import Search from '../assets/search.png';
+import Cart from '../../assets/cart.png';
+import Heart from '../../assets/heart.png';
+import Home from '../../assets/home.png';
+import Profile from '../../assets/profile.png';
+import Search from '../../assets/search.png';
 import Login from './login';
 import design from './navbar.module.css';
 

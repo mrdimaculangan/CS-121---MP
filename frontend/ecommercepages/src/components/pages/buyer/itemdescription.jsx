@@ -1,7 +1,7 @@
 import React from 'react';
 import styleitem from './itemdescription.module.css';
-import Heart from '../assets/heart.png';
-import Frame from '../assets/frame.png';
+import Heart from '../../assets/heart.png';
+import Frame from '../../assets/frame.png';
 import Navbar from './navbar';
 
 const ItemDescription = () => {
