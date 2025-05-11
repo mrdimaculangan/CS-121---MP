@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from './navbar.module.css';
 import logo from '../../assets/logo.png'
+import search from '../../assets/search.png'
 
 const Navbar = () => {
   return (
@@ -13,10 +14,11 @@ const Navbar = () => {
       <div className={styles.navRow}>
         <ul className={styles.navLinks}>
           <li><Link to="/">Home</Link></li>
-          <li><Link to="/our-story">Our Story</Link></li>
-          <li><Link to="/services">Services</Link></li>
-          <li><Link to="/shop">Shop</Link></li>
-          <li><Link to="/contact">Contact</Link></li>
+          <li><Link to="/WAITLNG">Shop</Link></li>
+          <li><Link to="/WAITLNG">About Us</Link></li>
+          <li><Link to="/login">Log-In</Link></li>
+          <li><Link to="/contact">Likes</Link></li>
+          <li><Link to="/cart">Cart</Link></li>
         </ul>
 
         <form className={styles.search}>
@@ -26,7 +28,7 @@ const Navbar = () => {
             placeholder="Search"
           />
           <button type="submit" className={styles.searchSubmit}>
-            <img src="/search-icon.png" alt="Search" width="20" />
+            <img src={search} alt="Search" width="20" />
           </button>
         </form>
       </div>
