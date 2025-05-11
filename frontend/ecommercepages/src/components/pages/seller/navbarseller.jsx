@@ -4,11 +4,10 @@ import Heart from '../../assets/heart.png';
 import Home from '../../assets/home.png';
 import Profile from '../../assets/profile.png';
 import Search from '../../assets/search.png';
-import Login from './login';
-import design from './navbar.module.css';
+import design from './navbarseller.module.css';
 import { Nav } from 'react-bootstrap';
 
-export const Navbar = () => {
+export const NavbarSeller = () => {
   return (
     <nav className={design.navbar}>
     <div className={design.navbarContainer}>
@@ -22,12 +21,10 @@ export const Navbar = () => {
       </form>
       <ul className={design.navbarLinksRight}>
         <li><Nav.Link href="./login"><img src={Profile} alt="Description" style={{ width: '40px' }} /></Nav.Link></li>
-        <li><Nav.Link href="/"><img src={Heart} alt="Description" style={{ width: '40px' }} /></Nav.Link></li>
-        <li><Nav.Link href="/"><img src={Cart} alt="Description" style={{ width: '36px' }} /></Nav.Link></li>
     </ul>
     </div>
   </nav> 
   )
 }
 
-export default Navbar
+export default NavbarSeller;

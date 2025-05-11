@@ -10,3 +10,11 @@
     flex-wrap: wrap;
     max-height: 600px;
 }
+
+.cartTitle{
+    color: #602f32;
+    position: absolute;
+    margin-left: 645px;
+    margin-top: 50px;
+    font-size: 30px;
+}

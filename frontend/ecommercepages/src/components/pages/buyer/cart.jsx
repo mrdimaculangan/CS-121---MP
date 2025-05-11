@@ -7,7 +7,7 @@ const MyCart = () => {
         <div className={stylecart.cartPage}>
             <Navbar/>
         <div className={stylecart.cartContainer}>
-            <h1 className="cartTitle" style={{fontFamily: 'Bayer TypeArchiType Regular' }}>your cart</h1>
+            <p className={stylecart.cartTitle} style={{fontFamily: 'Bayer TypeArchiType Regular' }}>your cart</p>
         <div className={stylecart.itemList}>
 
         </div>

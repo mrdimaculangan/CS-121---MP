@@ -5,15 +5,20 @@ import ProfileInformation from "./components/pages/buyer/profileinformation";
 import Login from "./components/pages/buyer/login"
 import Navbar from "./components/pages/buyer/navbar";
 import MyCart from "./components/pages/buyer/cart";
+import StoreEdit from "./components/pages/seller/storeedit";
 
 
-function App() {
+const App = () => {
   return (
-    <>
-    <Login /> 
-  
-    </>
+    <Routes>
+      <Route path="/profileinformation" element={<ProfileInformation />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/itemdescription" element = {<ItemDescription />} />
+      <Route path="/storeedit" element = {<StoreEdit />} />
+      <Route path="/cart" element = {<MyCart />} />
+    </Routes>
   );
-}
-
+};
 export default App;
+
+

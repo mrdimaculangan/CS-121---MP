@@ -6,7 +6,7 @@
   }
   
 .itemContainer {
-    background-color: #f7cdd0;
+    background: url("../../assets/profilebg.png") no-repeat center center fixed;
     background-size: cover;
     border: none;
     overflow: hidden;
