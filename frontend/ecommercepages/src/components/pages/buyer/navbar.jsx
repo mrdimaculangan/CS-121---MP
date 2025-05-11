@@ -1,4 +1,51 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import styles from './navbar.module.css';
+import logo from '../../assets/logo.png'
+
+const Navbar = () => {
+  return (
+    <nav className={styles.navbar}>
+      <div className={styles.logoContainer}>
+        <img src={logo} alt="Logo" className={styles.logoImg} />
+      </div>
+
+      <div className={styles.navRow}>
+        <ul className={styles.navLinks}>
+          <li><Link to="/">Home</Link></li>
+          <li><Link to="/our-story">Our Story</Link></li>
+          <li><Link to="/services">Services</Link></li>
+          <li><Link to="/shop">Shop</Link></li>
+          <li><Link to="/contact">Contact</Link></li>
+        </ul>
+
+        <form className={styles.search}>
+          <input
+            className={styles.searchBar}
+            type="search"
+            placeholder="Search"
+          />
+          <button type="submit" className={styles.searchSubmit}>
+            <img src="/search-icon.png" alt="Search" width="20" />
+          </button>
+        </form>
+      </div>
+    </nav>
+  );
+};
+
+export default Navbar;
+
+
+
+
+
+
+
+
+
+
+/* import React from 'react';
 import Cart from '../../assets/cart.png';
 import Heart from '../../assets/heart.png';
 import Home from '../../assets/home.png';
@@ -31,3 +78,4 @@ export const Navbar = () => {
 }
 
 export default Navbar
+*/
