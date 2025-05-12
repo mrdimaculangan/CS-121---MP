@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import styles from './login.module.css'; // adjust path if needed
+import styles from './login.module.css'; 
 import Navbar from './navbar';
 
 const Login = () => {

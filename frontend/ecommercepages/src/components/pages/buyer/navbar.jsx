@@ -14,8 +14,8 @@ const Navbar = () => {
       <div className={styles.navRow}>
         <ul className={styles.navLinks}>
           <li><Link to="/">Home</Link></li>
-          <li><Link to="/WAITLNG">Shop</Link></li>
-          <li><Link to="/WAITLNG">About Us</Link></li>
+          <li><Link to="/shop">Shop</Link></li>
+          <li><Link to="/">About Us</Link></li> {/* Link the section of ABOUT US but in the HOMEpage only */}
           <li><Link to="/login">Log-In</Link></li>
           <li><Link to="/contact">Likes</Link></li>
           <li><Link to="/cart">Cart</Link></li>

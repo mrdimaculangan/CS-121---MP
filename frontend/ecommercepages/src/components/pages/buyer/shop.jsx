@@ -1,17 +1,12 @@
 import React from 'react'
-import home from '../../assets/home.mp4'
-import styles from './home.module.css'
 import Navbar from './navbar'
+import styles from './shop.module.css'
 import flower from '../../assets/flower.jpeg'
 
-
-const Home = () => {
+const Shop = () => {
     return (
-     <div className={styles.homeContainer}>
+     <div className={styles.ShopContainer}>
           <Navbar />
-        <div className = {styles.video}>
-            <video src={home} autoPlay loop muted />
-        </div>
         <div className = {styles.shopSection}>
             <h1> SHOP SECTION </h1>
             {/* insert sample products with button that will lead to full on store*/}
@@ -21,4 +16,4 @@ const Home = () => {
     )
 }
 
-export default Home
+export default Shop

@@ -8,6 +8,7 @@ import ItemDescription from "./components/pages/buyer/itemdescription";
 import MyCart from "./components/pages/buyer/cart";
 import StoreEdit from "./components/pages/seller/storeedit";
 import Home from "./components/pages/buyer/home"
+import Shop from "./components/pages/buyer/shop"
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
       <Route path="/itemdescription" element={<ItemDescription />} />
       <Route path="/storeedit" element={<StoreEdit />} />
       <Route path="/cart" element={<MyCart />} />
+      <Route path ="/shop" element={<Shop />} />
     </Routes>
   );
 };
