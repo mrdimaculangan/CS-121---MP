@@ -10,11 +10,12 @@
   background-color: #3a0a1a;
   text-align: center;
   padding: 1 rem 0.5 rem;
+  padding-bottom: 2rem;
   color: #fbeee0;
 }
 
 .storeName {
-  font-family: 'Moonwake', 'DM Serif Display', serif;
+  font-family: 'Bayer TypeArchiType Regular';
   font-size: 3rem;
   letter-spacing: 2px;
   margin-bottom: 1rem;
@@ -53,7 +54,7 @@
 
 .navLinks li a {
   color: #fbeee0;
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Bayer Architype';
   font-size: 1.1rem;
   text-decoration: none;
   transition: color 0.3s ease;

@@ -1,20 +1,97 @@
-.cartContainer{
-    flex: 1;
-    background-image: url('../../assets/profilebg.png');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: fixed;
-    background-size:cover;
-    min-height: 100vh;
-    overflow-y:hidden;
-    flex-wrap: wrap;
-    max-height: 600px;
+.cartContainer {
+  background-color: #3a0a1a;
+  min-height: 100vh;
+  padding: 2rem;
+  font-family: 'Bayer TypeArchiType Regular', serif;
 }
 
-.cartTitle{
-    color: #602f32;
-    position: absolute;
-    margin-left: 645px;
-    margin-top: 50px;
-    font-size: 30px;
+.cartWrapper {
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+  padding-top: 3rem;
+}
+
+.cartBox,
+.receiptBox {
+  border-radius: 24px;
+  padding: 2rem;
+  width: 360px;
+}
+
+.cartBox {
+  background-color: #f8c6cc;
+}
+
+.receiptBox {
+  background-color: #fff;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  color: #5b0c18;
+}
+
+.cartItem {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid #3a0a1a;
+  padding-bottom: 1rem;
+}
+
+.cartItem img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-right: 1rem;
+}
+
+.itemDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.itemName {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.itemPrice,
+.itemQty {
+  font-size: 0.95rem;
+}
+
+.receiptRow,
+.totalRow {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #aaa;
+  margin: 1rem 0;
+}
+
+.checkoutBtn {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: none;
+  border-radius: 40px;
+  background-color: #c74c68;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.checkoutBtn:hover {
+  background-color: #a83a52;
 }

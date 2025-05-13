@@ -5,64 +5,72 @@
     font-style: normal;
   }
   
-.itemContainer {
-    background: url("../../assets/profilebg.png") no-repeat center center fixed;
-    background-size: cover;
-    border: none;
-    overflow: hidden;
+ .itemContainer {
+  background-color: #3a0a1a;
+  min-height: 100vh;
+  padding: 4rem 2rem;
+  font-family: 'Bayer TypeArchiType Regular', serif;
 }
 
-.fav, .add{
-    transform: translateX(500px);
-    position: absolute;
-    margin-top: 3px;
-    border: none;
-    background: transparent;
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+  padding: 3rem;
+  background-color: white;
+  border-radius: 24px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
-.content{
-    display: flex;
-    gap: 40px;
-}
-
-.frame{
-    margin-top: -40px;
-    margin-left: 60px;
+.productimage img {
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+  width: 550px;
 }
 
 .productdescription {
-    margin-top: 100px;
-    color: #602f32;
-    display: flex;
-    flex-direction: column;
-    gap: 20px; 
-  }
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
 
-  .add{
-    background-color: #b84c65;
-    margin-left: 80px;
-    width: 160px;
-    height: 40px;
-    border-radius: 30px;
-    font-family: 'Bayer TypeArchiType Regular';
-    color: white;
-  }
+.productname {
+  font-size: 2.4rem;
+  color: #3a0a1a;
+}
 
-  .price{
-    margin-left: 20px;
-    margin-top: -10px;
-  }
+.price {
+  font-family: 'Pinyon Script', cursive;
+  font-size: 2rem;
+  color: #994b5e;
+}
 
-  .description{
-    margin-left: 80px;
-    margin-top: -10px;
-  }
+.description {
+  font-size: 1.1rem;
+  color: #422222;
+}
 
-  .buttongroup{
-    margin-left: -430px;
-    display: flex;
-  }
+.buttongroup {
+  display: flex;
+  gap: 1rem;
+}
 
-  .fav{
-    margin-top: -2px;
-  }
+.add {
+  background-color: #c74c68;
+  color: white;
+  border: none;
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.add:hover {
+  background-color: #a83a52;
+  transform: scale(1.03);
+}
