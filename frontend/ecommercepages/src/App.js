@@ -1,5 +1,5 @@
-import React from "react";
-import { Routes, Route } from 'react-router-dom';
+import React, {useState} from "react";
+import { Routes, Route, Navigate } from 'react-router-dom'; 
 import './App.css';
 
 import Login from "./components/pages/buyer/login";
@@ -9,9 +9,11 @@ import MyCart from "./components/pages/buyer/cart";
 import StoreEdit from "./components/pages/seller/storeedit";
 import Home from "./components/pages/buyer/home"
 import Shop from "./components/pages/buyer/shop"
+import { CartProvider } from "react-use-cart";
 
 const App = () => {
   return (
+    <CartProvider>
     <Routes>
       <Route path="/home" element={<Home />} />
       <Route path="/" element={<Home />} />
@@ -22,6 +24,7 @@ const App = () => {
       <Route path="/cart" element={<MyCart />} />
       <Route path ="/shop" element={<Shop />} />
     </Routes>
+    </CartProvider>
   );
 };
 

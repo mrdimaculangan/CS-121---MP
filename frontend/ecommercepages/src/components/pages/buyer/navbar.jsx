@@ -33,6 +33,7 @@ const Navbar = () => {
           <li><a href="#about" onClick={handleAboutClick}>about us</a></li>
           <li><Link to="/login">log-in</Link></li>
           <li><Link to="/cart">cart</Link></li>
+          <li><Link to="/profileinformation">your account</Link></li>
         </ul>
 
         <form className={styles.search}>

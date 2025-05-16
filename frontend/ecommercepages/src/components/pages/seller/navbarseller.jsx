@@ -20,7 +20,7 @@ export const NavbarSeller = () => {
         <button class="button" type="submit" className={design.searchSubmit}><img src={Search} alt="Description" style={{ width: '25px' }} /></button>
       </form>
       <ul className={design.navbarLinksRight}>
-        <li><Nav.Link href="./login"><img src={Profile} alt="Description" style={{ width: '40px' }} /></Nav.Link></li>
+        <li><Nav.Link href="./profileinformation"><img src={Profile} alt="Description" style={{ width: '40px' }} /></Nav.Link></li>
     </ul>
     </div>
   </nav> 

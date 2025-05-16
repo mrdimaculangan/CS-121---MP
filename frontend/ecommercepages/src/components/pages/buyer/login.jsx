@@ -15,7 +15,7 @@ const Login = () => {
           {/* Login Form */}
           <div className={styles.formPage}>
             <form className={styles.loginForm}>
-              <label onClick={() => setShowRegister(false)}>log-in</label>
+              <label onClick={() => setShowRegister(false)} style={{fontFamily: 'Bayer TypeArchiType Regular'}}>log-in</label>
               <input type="text" placeholder="Email" />
               <input type="password" placeholder="Password" />
               <button type="submit" className={styles.logInButton}>LOG IN</button>
@@ -25,7 +25,7 @@ const Login = () => {
           {/* Register Form */}
           <div className={styles.formPage + ' ' + styles.registerForm}>
             <form>
-              <label onClick={() => setShowRegister(true)}>register</label>
+              <label onClick={() => setShowRegister(true)} style={{fontFamily: 'Bayer TypeArchiType Regular'}}>register</label>
               <input type="text" placeholder="First Name" />
               <input type="text" placeholder="Last Name" />
               <input type="email" placeholder="Email" />

@@ -7,15 +7,14 @@
 
 .profilepageContainer{
     flex: 1;
-    background-image: url('../../assets/profilebg.png');
+    background: #3a0a1a;
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
     background-size:cover;
-    min-height: 100vh;
-    overflow-y:hidden;
     flex-wrap: wrap;
-    max-height: 600px;
+    min-height: 100vh;
+    overflow-y: hidden;
 }
 
 .profileInfo{
@@ -25,7 +24,6 @@ padding: 40px;
 justify-content: center;
 display: grid;
 grid-template-rows: 1fr auto 1fr;
-overflow-y: hidden;
 margin-top: -15px;
 }
 
@@ -34,6 +32,7 @@ margin-top: -15px;
     width: 100%;
     max-width: 800px;
     margin: 0 auto;
+    height: 100%;
 
 }
 
@@ -62,10 +61,12 @@ color: #602f32;
 .welcomeMessage{
     margin-left: 25px;
     margin-top: 100px;
+    color: #ffce1b;
 }
 .infoMessage{
-    margin-top: -10px;
+    margin-top: 30px;
     font-size:large;
+    color: #fbeee0;
 }
 .email, .username{
     transform: translateY(-10px);
@@ -73,15 +74,16 @@ color: #602f32;
 }
 
 .email{
-    background-color: #b84c65;
-    color: white;
+    background-color: #fbeee0;
+    color: #602f32;
     padding: 5px;
 }
 
 .username{
-    background-color: #b84c65;
-    color: white;
+    background-color: #fbeee0;
+    color: #602f32;
     padding: 5px;
+    margin-top: 10px;
 }
   
 .pic{
@@ -115,13 +117,18 @@ max-height:fit-content;
 
 .logout{
     position: relative;
-    transform: translateX(90px);
+    margin-left: 90px;
     font-family: 'Bayer TypeArchiType Regular';
-    background-color: #602f32;
-    color: white;
+    background-color: #fbeee0;
+    color: #602f32;
     width: 150px;
     padding: 10px;
     border-radius: 20px;
     border: none;
-    margin: 0;
+    margin-top: 10px;
+    transition: transform 0.2s ease;
+}
+
+.logout:hover {
+  transform: scale(1.1);
 }
