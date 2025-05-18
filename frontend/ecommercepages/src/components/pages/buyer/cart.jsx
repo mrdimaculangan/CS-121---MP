@@ -5,7 +5,7 @@ import { useCart } from 'react-use-cart';
 import { useState } from 'react';
 
 const Cart = () => {
-  const { items,removeItem,cartTotal, updateItemQuantity} = useCart();
+  const { items,removeItem,cartTotal, updateItemQuantity, emptyCart} = useCart();
   const [successCheckout, setSuccessCheckout] = useState(false);
   const [emptyCartMessage, setEmptyCartMessage] = useState(false);
 
@@ -74,7 +74,15 @@ const Cart = () => {
         <div className={styles.messageOverlay}>
         <div className={styles.confirmContent}>
         <h3 className={styles.checkoutconfirm}>Your order has been successfully placed! Thank you for ordering!</h3>
-      <button className={styles.closeMessage} onClick={() => setSuccessCheckout(false)}>Return to page</button>
+        <button 
+          className={styles.closeMessage} 
+          onClick={() => {
+            emptyCart(); 
+            setSuccessCheckout(false);
+          }}
+        >
+          Return to page
+        </button>
     </div>
   </div>
     )}
