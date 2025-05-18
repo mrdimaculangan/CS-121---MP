@@ -16,5 +16,10 @@
   "bugs": {
     "url": "https://github.com/mrdimaculangan/CS-121---MP/issues"
   },
-  "homepage": "https://github.com/mrdimaculangan/CS-121---MP#readme"
+  "homepage": "https://github.com/mrdimaculangan/CS-121---MP#readme",
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-use-cart": "^1.14.0"
+  }
 }

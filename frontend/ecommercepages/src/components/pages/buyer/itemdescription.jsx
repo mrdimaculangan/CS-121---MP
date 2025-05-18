@@ -1,19 +1,24 @@
-import React from 'react';
-import styleitem from './itemdescription.module.css';
-import Navbar from './navbar';
-import amor from '../../assets/amor.png';
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 import { useCart } from 'react-use-cart';
+import Navbar from './navbar';
+import styleitem from './itemdescription.module.css';
 
 const ItemDescription = () => {
+  const { id } = useParams(); // Get product ID from URL
   const { addItem } = useCart();
+  const [product, setProduct] = useState(null);
 
-  const product = {
-    id: 1, 
-    name: 'Amorous Amor',
-    price: 99999, 
-    image: amor,
-    description: 'A lovely arrangement of roses wrapped in delicate blush tones — perfect for someone unforgettable.',
-  };
+  useEffect(() => {
+    fetch(`http://localhost:8000/api/products/${id}/`)
+      .then(res => res.json())
+      .then(data => setProduct(data))
+      .catch(err => console.error("Failed to fetch product:", err));
+  }, [id]);
+
+  if (!product) {
+    return <div className={styleitem.itemContainer}>Loading...</div>;
+  }
 
   return (
     <div className={styleitem.itemContainer}>
@@ -35,7 +40,14 @@ const ItemDescription = () => {
             <button 
               type="button" 
               className={styleitem.add}
-              onClick={() => addItem(product)}>add to bag</button>
+              onClick={() => addItem({
+                id: product.id,
+                name: product.name,
+                price: product.price,
+                image: product.image
+              })}>
+              add to bag
+            </button>
           </div>
         </div>
       </div>
