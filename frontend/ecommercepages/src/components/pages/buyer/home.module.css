@@ -44,7 +44,7 @@
 }
 
 .centerVideo video {
-  width: 500px;
+  width: 560px;
   height: auto;
   border-radius: 16px;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
@@ -52,15 +52,24 @@
 
 
 .shopSection {
-  padding: 8rem;
+  padding-top: 6rem;
+  padding-bottom: 6rem;
   text-align: center;
   background-color: #3a0a1a;
 }
 
-.shopSection h1 {
+ .celebsSection h1 {
   font-family:'Bayer TypeArchiType Regular'; 
   color: #ffce1b;
+  padding-bottom: 2rem;
 }
+
+.shopSection h1 {
+  font-family:'Bayer TypeArchiType Regular'; 
+  color: #ffffff;
+  padding-bottom: 2rem;
+}
+
 .productGrid {
   display: flex;
   justify-content: center;
@@ -143,10 +152,180 @@
   background-color: #333;
 }
 
-.aboutSection {
-  padding: 4rem 2rem;
-  background-color: #fefefe;
+.celebsSection {
+  padding-bottom: 4rem;
   text-align: center;
-  font-size: 1.2rem;
+  background-color: #3a0a1a;;
+}
+
+.celebsSection img {
+  width: 29px;
+}
+
+.celebsSection h2 {
+  display: flex; 
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding-bottom: 1.2rem;
+}
+
+.celebsSection span {
+  color: white;
+  font-family: 'Bayer TypeArchiType';
+}
+
+.celebGrid {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+.celebCard {
+  background: white;
+  border: 2px dashed #f0c0c0;
+  border-radius: 1.5rem;
+  box-shadow: 0 10px 15px rgba(255, 192, 203, 0.2);
+  overflow: hidden;
+  width: 240px;
+  transition: transform 0.3s ease;
+}
+
+.celebCard:hover {
+  transform: scale(1.05);
+}
+
+.celebCard img {
+  width: 100%;
+  height: 270px;
+  object-fit: cover;
+  border-bottom: 1px solid #ffe0e0;
+}
+
+.celebName {
+  font-size: 1rem;
+  padding: 0.5rem;
+  font-weight: 500;
+  color: #aa336a;
+  font-family: 'Bayer TypeArchiType';
+}
+
+.aboutSection {
+  background-color: #fff5f8;
+  padding: 6rem 6rem;
   font-family: 'Bayer TypeArchiType Regular';
 }
+
+.aboutGrid {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 4rem;
+}
+
+.aboutText {
+  flex: 1;
+  max-width: 45%;
+  text-align: center; /* center-align text for aesthetic */
+  color: #3a0a1a;
+  font-size: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.aboutText h1 {
+  font-size: 2.4rem;
+  margin-bottom: 1rem;
+}
+
+.aboutImages {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.topRow {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.bottomRow {
+  display: flex;
+  justify-content: center;
+}
+
+.imageCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.imageCard img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 1rem;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.imageCard p {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #6a2b47;
+  font-family: 'Bayer TypeArchiType Regular';
+}
+
+
+.footer {
+  background-color: #3a0a1a;
+  color: white;
+  padding: 4rem 2rem;
+  font-family: 'Georgia', serif;
+  width: 100%;
+}
+
+.footerGrid {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 3rem;
+  margin: 0 auto;
+  max-width: 100%;
+}
+
+.column {
+  flex: 1;
+  min-width: 200px;
+}
+
+.column h3 {
+  font-size: 1.3rem;
+  margin-bottom: 1.2rem;
+  color: #f2f2f2;
+}
+
+.column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.column li {
+  margin-bottom: 0.8rem;
+  color: #cccccc;
+  font-size: 0.95rem;
+  cursor: default;
+  transition: color 0.3s ease;
+}
+
+.column li:hover {
+  color: #f0d390;
+}
+
