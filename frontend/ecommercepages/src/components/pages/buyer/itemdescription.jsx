@@ -8,6 +8,21 @@ const ItemDescription = () => {
   const { id } = useParams(); // Get product ID from URL
   const { addItem } = useCart();
   const [product, setProduct] = useState(null);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isAddFailed, setIsAddFailed] = useState(false);
+
+    // authenticate user
+    useEffect(() => {
+    fetch("http://localhost:8000/api/auth/user/", {
+      credentials: "include",
+    })
+      .then((res) => {
+        if (res.ok) return res.json();
+        throw new Error("Not authenticated");
+      })
+      .then(() => setIsLoggedIn(true))
+      .catch(() => setIsLoggedIn(false));
+  }, []);
 
   useEffect(() => {
     fetch(`http://localhost:8000/api/products/${id}/`)
@@ -40,18 +55,41 @@ const ItemDescription = () => {
             <button 
               type="button" 
               className={styleitem.add}
-              onClick={() => addItem({
-                id: product.id,
-                name: product.name,
-                price: product.price,
-                image: product.image
-              })}>
+              onClick={() => {
+                if (!isLoggedIn) {
+                  setIsAddFailed(true);
+                  return;
+                }
+                addItem({
+                  id: product.id,
+                  name: product.name,
+                  price: product.price,
+                  image: product.image
+                });
+              }}>
               add to bag
             </button>
           </div>
         </div>
       </div>
+      {isAddFailed && (
+        <div className={styleitem.failedOverlay}>
+          <div className={styleitem.failedmessageBox}>
+            <h3 className={styleitem.failedMessage}>
+              Please log in before adding to cart.
+            </h3>
+            <button 
+              className={styleitem.closefailedMessage} 
+              onClick={() => setIsAddFailed(false)}>
+              Return to page
+            </button>
+          </div>
+        </div>
+)}
+
     </div>
+
+    
   );
 };
 

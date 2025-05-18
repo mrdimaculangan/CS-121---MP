@@ -160,3 +160,7 @@ hr {
   border-radius: 8px;
   cursor: pointer;
 }
+
+.closeMessage:hover {
+  transform: scale(2);
+}
