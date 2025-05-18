@@ -106,6 +106,7 @@
 }
 
 .closefailedMessage{
+  font-family: 'Bayer TypeArchiType Regular';
   font-weight: bold;
   padding: 0.5rem 1rem;
   border: none;
