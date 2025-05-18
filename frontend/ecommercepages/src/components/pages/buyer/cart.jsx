@@ -30,12 +30,10 @@ const Cart = () => {
                   <div className={styles.quantityControls}>
                   <button 
                     onClick={() => updateItemQuantity(item.id, item.quantity - 1)}
-                    disabled={item.quantity === 1}
-                  >-</button>
+                    disabled={item.quantity === 1}>-</button>
                   <span>{item.quantity}</span>
                   <button 
-                    onClick={() => updateItemQuantity(item.id, item.quantity + 1)}
-                  >+</button>
+                    onClick={() => updateItemQuantity(item.id, item.quantity + 1)}>+</button>
                 </div>
                   <button 
                     className={styles.removeItem}
@@ -63,15 +61,14 @@ const Cart = () => {
           </div>
           <hr />
           <button
-  className={styles.checkoutBtn}
-  onClick={() => {
-        if (items.length === 0) {
-          setEmptyCartMessage(true);
-        } else {
-          setSuccessCheckout(true);
-        }
-      }}>checkout</button>   
-</div>
+          className={styles.checkoutBtn}
+          onClick={() => {
+                if (items.length === 0) {
+                  setEmptyCartMessage(true);
+                } else {
+                  setSuccessCheckout(true);
+                }}}>checkout</button>    
+      </div>
           
        {successCheckout && (
         <div className={styles.messageOverlay}>
@@ -80,7 +77,7 @@ const Cart = () => {
       <button className={styles.closeMessage} onClick={() => setSuccessCheckout(false)}>Return to page</button>
     </div>
   </div>
-)}
+    )}
       {emptyCartMessage && (
         <div className={styles.messageOverlay}>
           <div className={styles.confirmContent}>
