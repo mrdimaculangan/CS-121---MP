@@ -8,7 +8,8 @@ const Cart = () => {
   const { 
     items,             
     removeItem,          
-    cartTotal,           
+    cartTotal, 
+    updateItemQuantity          
   } = useCart();
 
   return (
@@ -28,7 +29,16 @@ const Cart = () => {
                 <div className={styles.itemDetails}>
                   <p className={styles.itemName}>{item.name}</p>
                   <p className={styles.itemPrice}>₱{item.price}</p>
-                  <p className={styles.itemQty}>Qty: {item.quantity}</p>
+                  <div className={styles.quantityControls}>
+                  <button 
+                    onClick={() => updateItemQuantity(item.id, item.quantity - 1)}
+                    disabled={item.quantity === 1}
+                  >-</button>
+                  <span>{item.quantity}</span>
+                  <button 
+                    onClick={() => updateItemQuantity(item.id, item.quantity + 1)}
+                  >+</button>
+                </div>
                   <button 
                     className={styles.removeItem}
                     onClick={() => removeItem(item.id)} 
@@ -47,7 +57,7 @@ const Cart = () => {
           {items.map((item) => (
             <div className={styles.receiptRow} key={item.id}>
               <span>{item.name} x {item.quantity}</span>
-              <span>₱{item.itemTotal}</span> {/* itemTotal = price * quantity */}
+              <span>₱{item.quantity * item.price}</span>{/* itemTotal = price * quantity */}
             </div>
           ))}
 
