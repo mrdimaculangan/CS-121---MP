@@ -12,6 +12,7 @@ import jennie from '../../assets/jennie.jpeg'
 import wonyoung from '../../assets/wonyoung.jpeg'
 import kurt from '../../assets/kurt.jpg'
 import ig from '../../assets/ig.png'
+import about from '../../assets/about.jpeg'
 
 
 const Home = () => {
@@ -113,12 +114,15 @@ const Home = () => {
         <div className={styles.aboutText}>
           <h1>ABOUT US</h1>
           <p>
-            “We believe every bloom tells a story.” <br />
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Inspired by softness, curated with love.
+            “We believe every flower tells a story.” <br />
+            Here in Francesca's Flowers, we want to be with you every 
+            important occassion of your life. 
+            Inspired by softness, curated with love.
           </p>
+          <img src ={about} alt='about'/>
         </div>
 
-        {/* RIGHT IMAGE TRIANGLE */}
+        {/* RIGHT SIDE */}
         <div className={styles.aboutImages}>
           <div className={styles.topRow}>
             <div className={styles.imageCard}>
