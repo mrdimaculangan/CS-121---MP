@@ -123,7 +123,7 @@ const Home = () => {
           <div className={styles.topRow}>
             <div className={styles.imageCard}>
               <img src={hanni} alt="Hanni" />
-              <p>Hanni</p>
+              <p>Mari</p>
             </div>
             <div className={styles.imageCard}>
               <img src={hanni} alt="Bianca" />
@@ -133,7 +133,7 @@ const Home = () => {
           <div className={styles.bottomRow}>
             <div className={styles.imageCard}>
               <img src={hanni} alt="Mari" />
-              <p>Mari</p>
+              <p>Amor</p>
             </div>
           </div>
         </div>
