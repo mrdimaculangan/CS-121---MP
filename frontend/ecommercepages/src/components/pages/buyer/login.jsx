@@ -95,8 +95,8 @@ const Login = () => {
           <div className={styles.formPage}>
             <form className={styles.loginForm} onSubmit={handleLogin}>
               <label
+                className={styles.loginLabel}
                 onClick={() => setShowRegister(false)}
-                style={{ fontFamily: 'Bayer TypeArchiType Regular' }}
               >
                 log-in
               </label>
@@ -120,8 +120,8 @@ const Login = () => {
           <div className={`${styles.formPage} ${styles.registerForm}`}>
             <form onSubmit={handleRegister}>
               <label
+                className={styles.registerLabel}
                 onClick={() => setShowRegister(true)}
-                style={{ fontFamily: 'Bayer TypeArchiType Regular' }}
               >
                 register
               </label>

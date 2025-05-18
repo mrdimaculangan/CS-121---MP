@@ -67,14 +67,15 @@
 } 
 
 /* THIS IS FOR WHEN THE LOGIN IS THE ONE ACTIVE 
-    AND HOW THE REGISTER FORM WILL LOOK SO IT STAYS IN ONE CONTAINER*/ 
+    AND HOW THE REGISTER FORM WILL
+     LOOK SO IT STAYS IN ONE CONTAINER*/ 
 .loginregisterMain.active .registerForm {
-  transform: translateY(20%);
-  border-radius: 0;
+  transform: translateY(15%);
+  border-radius: 60% / 20%;
   z-index: 2;
 }
 
-/* Labels for toggling */
+/* Main LABEL LOOK */
 .loginregisterMain label {
   font-size: 2.3em;
   justify-content: center;
@@ -85,6 +86,25 @@
   transition: 0.5s ease-in-out;
 }
 
+.loginLabel {
+  transition: transform 0.6s ease;
+}
+
+.registerLabel {
+  transition: transform 0.6s ease;
+}
+
+/* IF register is active,login label MOVE up */
+.loginregisterMain.active .loginLabel {
+  transform: translateY(-50px);
+  color: #361022;
+}
+
+/* IF login is active, push register label down */
+.loginregisterMain:not(.active) .registerLabel {
+  transform: translateY(-30px);
+  color: #aa336a;
+}
 
 .registerButton, .logInButton {
   width: 60%; 
@@ -119,3 +139,4 @@
   outline: none; 
   border-radius: 10px; 
 }
+
