@@ -1,16 +1,14 @@
-// src/components/Cart.js
 import React from 'react';
 import styles from './cart.module.css';
 import Navbar from './navbar';
 import { useCart } from 'react-use-cart'; 
+import { useState } from 'react';
 
 const Cart = () => {
-  const { 
-    items,             
-    removeItem,          
-    cartTotal, 
-    updateItemQuantity          
-  } = useCart();
+  const { items,removeItem,cartTotal, updateItemQuantity} = useCart();
+  const [successCheckout, setSuccessCheckout] = useState(false);
+  const [emptyCartMessage, setEmptyCartMessage] = useState(false);
+
 
   return (
     <div className={styles.cartContainer}>
@@ -41,10 +39,7 @@ const Cart = () => {
                 </div>
                   <button 
                     className={styles.removeItem}
-                    onClick={() => removeItem(item.id)} 
-                  >
-                    remove
-                  </button>
+                    onClick={() => removeItem(item.id)}>remove</button>
                 </div>
               </div>
             ))
@@ -67,8 +62,33 @@ const Cart = () => {
             <span>₱{cartTotal}</span> {/* Pre-calculated total */}
           </div>
           <hr />
-          <button className={styles.checkoutBtn}>checkout</button>
+          <button
+  className={styles.checkoutBtn}
+  onClick={() => {
+        if (items.length === 0) {
+          setEmptyCartMessage(true);
+        } else {
+          setSuccessCheckout(true);
+        }
+      }}>checkout</button>   
+</div>
+          
+       {successCheckout && (
+        <div className={styles.messageOverlay}>
+        <div className={styles.confirmContent}>
+        <h3 className={styles.checkoutconfirm}>Your order has been successfully placed! Thank you for ordering!</h3>
+      <button className={styles.closeMessage} onClick={() => setSuccessCheckout(false)}>Return to page</button>
+    </div>
+  </div>
+)}
+      {emptyCartMessage && (
+        <div className={styles.messageOverlay}>
+          <div className={styles.confirmContent}>
+            <h3 className={styles.checkoutconfirm}>Your cart is empty. Please add items before checking out.</h3>
+            <button className={styles.closeMessage} onClick={() => setEmptyCartMessage(false)}>Return to page</button>
+          </div>
         </div>
+      )}
       </div>
     </div>
   );
