@@ -8,7 +8,7 @@ class Product(models.Model):
     price = models.DecimalField(max_digits=10, decimal_places=2)
     description = models.TextField()
     image = models.ImageField(upload_to='product_images/')
-    seller = models.ForeignKey(User, on_delete=models.CASCADE, default=1)  # Default to superuser with ID 1
+    seller = models.ForeignKey(User, on_delete=models.CASCADE, default=1)  # default to superuser
 
     def __str__(self):
         return self.name
