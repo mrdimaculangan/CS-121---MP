@@ -61,7 +61,7 @@ const Home = () => {
  
 
       <div className={styles.shopSection}>
-        <h1> 𐙚 ‧₊˚ ⋅  Featured 𐙚 ‧₊˚ ⋅</h1>
+        <h1> Featured 🧸ྀི</h1>
         <div className={styles.productGrid}>
         {products.map((product) => (
             <Link
@@ -114,10 +114,10 @@ const Home = () => {
         <div className={styles.aboutText}>
           <h1>ABOUT US</h1>
           <p>
-            “We believe every flower tells a story.” <br />
-            Here in Francesca's Flowers, we want to be with you every 
-            important occassion of your life. 
-            Inspired by softness, curated with love.
+            🌺 “We believe every flower tells a story.”🌺 <br />
+            Here in <strong>Francesca's Flowers</strong>, we want to be with you on every 
+            important occassion of your life. <br />
+            Inspired by softness 🌸, curated with love 💌. 
           </p>
           <img src ={about} alt='about'/>
         </div>

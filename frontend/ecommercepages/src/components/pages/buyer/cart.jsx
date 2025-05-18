@@ -17,7 +17,7 @@ const Cart = () => {
       <div className={styles.cartWrapper}>
         {/* Cart Section */}
         <div className={styles.cartBox}>
-          <h2>your cart</h2>
+          <h2>your cart 🛒 </h2>
           {items.length === 0 ? (
             <p>Your cart is empty.</p>
           ) : (
@@ -47,6 +47,14 @@ const Cart = () => {
         {/* Receipt Section */}
         <div className={styles.receiptBox}>
           <h2>receipt</h2>
+          <div className={styles.receiptHeader}>
+            <p>Francesca’s Flowers</p>
+            <p>5th Avenue, New York City</p>
+            <p>🧾 Receipt No: #FF-{Math.floor(Math.random() * 10000)}</p>
+            <p>Cashier: Song Kang</p>
+          <hr />
+          </div>
+
           {items.map((item) => (
             <div className={styles.receiptRow} key={item.id}>
               <span>{item.name} x {item.quantity}</span>
@@ -55,11 +63,26 @@ const Cart = () => {
           ))}
 
           <hr />
+
           <div className={styles.totalRow}>
-            <span>total</span>
-            <span>₱{cartTotal}</span> {/* Pre-calculated total */}
+          <span>Subtotal</span>
+          <span>₱{cartTotal}</span>
+          </div>
+          <div className={styles.totalRow}>
+            <span>VAT (12%)</span>
+            <span>₱{(cartTotal * 0.12).toFixed(2)}</span>
+          </div>
+          <div className={styles.totalRow}>
+            <strong>Total</strong>
+            <strong>₱{(cartTotal * 1.12).toFixed(2)}</strong>
           </div>
           <hr />
+
+          <div className={styles.receiptFooter}>
+            <p>🌷 Thank you for blooming with us!</p>
+            <p>Come back soon, babygirl 💌</p>
+          </div>
+
           <button
           className={styles.checkoutBtn}
           onClick={() => {
