@@ -8,10 +8,10 @@ const ItemDescription = () => {
   const { id } = useParams(); // Get product ID from URL
   const { addItem } = useCart();
   const [product, setProduct] = useState(null);
-  
-  const token = localStorage.getItem('token');  // log-in token
-  const [showLoginMessage, setShowLoginMessage] = useState(false);
 
+  const token = localStorage.getItem('token');
+  const [showLoginMessage, setShowLoginMessage] = useState(false);
+  const [showAddToCartMessage, setShowAddToCartMessage] = useState(false);
 
   useEffect(() => {
     fetch(`http://localhost:8000/api/products/${id}/`)
@@ -19,6 +19,23 @@ const ItemDescription = () => {
       .then(data => setProduct(data))
       .catch(err => console.error("Failed to fetch product:", err));
   }, [id]);
+
+  const handleAddToCart = () => {
+    if (!token) {
+      setShowLoginMessage(true);
+      return;
+    }
+
+    addItem({
+      id: product.id,
+      name: product.name,
+      price: product.price,
+      image: product.image
+    });
+
+    setShowAddToCartMessage(true);
+    setTimeout(() => setShowAddToCartMessage(false), 1500); // auto-hide
+  };
 
   if (!product) {
     return <div className={styles.itemContainer}>Loading...</div>;
@@ -44,24 +61,14 @@ const ItemDescription = () => {
             <button 
               type="button" 
               className={styles.add}
-              onClick={() => {
-                if (!token) {
-                  setShowLoginMessage(true); // show overlay
-                  return;
-                }
-                addItem({ 
-                id: product.id,
-                name: product.name,
-                price: product.price,
-                image: product.image
-              });
-              }}
+              onClick={handleAddToCart}
             >
               add to cart
             </button>
           </div>
         </div>
       </div>
+
       {showLoginMessage && (
         <div className={styles.failedOverlay}>
           <div className={styles.failedmessageBox}>
@@ -75,11 +82,18 @@ const ItemDescription = () => {
             </button>
           </div>
         </div>
-)}
+      )}
 
+      {showAddToCartMessage && (
+        <div className={styles.addtocartOverlay}>
+          <div className={styles.addtocartMessageBox}>
+            <h3 className={styles.addtocartMessage}>
+              Item added to cart! ✿
+            </h3>
+          </div>
+        </div>
+      )}
     </div>
-
-    
   );
 };
 
