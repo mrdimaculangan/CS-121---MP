@@ -37,7 +37,7 @@ const Login = () => {
 
     if (res.status === 200 && data.token) {
       localStorage.setItem('token', data.token);
-      localStorage.setItem('username', data.username); // PARA SA "Your Account" PART WAIT
+      localStorage.setItem('username', data.username); // PARA SA "Your Account" PART 
       
       // automatic to homepage after login
       navigate('/home');
@@ -68,7 +68,7 @@ const Login = () => {
         }),
       });
 
-      const text = await res.text(); // 👈 NOT `.json()` so we can see raw error
+      const text = await res.text(); 
 
       console.log("Server response:", text);
 
@@ -76,7 +76,7 @@ const Login = () => {
         alert('Registered successfully!');
         setShowRegister(false);
       } else {
-        alert('Registration failed: ' + text); // 👈 SHOW RAW MESSAGE
+        alert('Registration failed: ' + text); 
       }
     } catch (err) {
       console.error('Catch block error:', err);
