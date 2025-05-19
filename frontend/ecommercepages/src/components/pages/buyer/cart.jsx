@@ -4,11 +4,57 @@ import Navbar from './navbar';
 import { useCart } from 'react-use-cart'; 
 import { useState } from 'react';
 
+
 const Cart = () => {
   const { items,removeItem,cartTotal, updateItemQuantity, emptyCart} = useCart();
   const [successCheckout, setSuccessCheckout] = useState(false);
   const [emptyCartMessage, setEmptyCartMessage] = useState(false);
 
+    const handleCheckout = () => {
+      if (items.length === 0) {
+        setEmptyCartMessage(true);
+        return;
+      }
+
+      const token = localStorage.getItem('token');
+      if (!token) {
+        alert("Please log in to checkout.");
+        return;
+      }
+
+      const cartSummary = items.map(item => `${item.name} x${item.quantity}`).join(', ');
+      
+      console.log("TOKEN:", token);
+      console.log("Sending:", {
+        items: cartSummary,
+        total_price: (cartTotal * 1.12).toFixed(2)
+      });
+      
+      fetch('http://localhost:8000/api/orders/', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Token ${token}`,
+        },
+        body: JSON.stringify({
+          items: cartSummary,
+          total_price: (cartTotal * 1.12).toFixed(2),
+        }),
+      })
+        .then((res) => {
+          if (!res.ok) throw new Error("Failed to save order");
+          return res.json();
+        })
+        .then((data) => {
+          console.log("Order saved:", data);
+          setSuccessCheckout(true);
+          emptyCart();
+        })
+        .catch((err) => {
+          console.error("Failed to save order:", err);
+          alert("There was a problem saving your order.");
+        });
+    };
 
   return (
     <div className={styles.cartContainer}>
@@ -85,14 +131,13 @@ const Cart = () => {
 
           <button
           className={styles.checkoutBtn}
-          onClick={() => {
-                if (items.length === 0) {
-                  setEmptyCartMessage(true);
-                } else {
-                  setSuccessCheckout(true);
-                }}}>checkout</button>    
+          onClick=
+          {handleCheckout}
+          >checkout</button>    
       </div>
           
+
+      {/* handle checkout */}
        {successCheckout && (
         <div className={styles.messageOverlay}>
         <div className={styles.confirmContent}>
@@ -113,7 +158,13 @@ const Cart = () => {
         <div className={styles.messageOverlay}>
           <div className={styles.confirmContent}>
             <h3 className={styles.checkoutconfirm}>Your cart is empty. Please add items before checking out.</h3>
-            <button className={styles.closeMessage} onClick={() => setEmptyCartMessage(false)}>Return to page</button>
+            <button 
+            className={styles.closeMessage} 
+            onClick={() => 
+            setEmptyCartMessage(false)
+            }>
+              Return to page
+            </button>
           </div>
         </div>
       )}

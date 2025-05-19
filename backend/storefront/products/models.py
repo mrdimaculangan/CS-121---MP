@@ -9,6 +9,8 @@ class Product(models.Model):
     description = models.TextField()
     image = models.ImageField(upload_to='product_images/')
     seller = models.ForeignKey(User, on_delete=models.CASCADE, default=1)  # default to superuser
+    quantity = models.PositiveIntegerField(default=20)
+    is_sold_out = models.BooleanField(default=False)
 
     def __str__(self):
         return self.name
