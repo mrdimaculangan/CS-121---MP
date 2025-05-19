@@ -13,6 +13,9 @@ import wonyoung from '../../assets/wonyoung.jpeg'
 import kurt from '../../assets/kurt.jpg'
 import ig from '../../assets/ig.png'
 import about from '../../assets/about.jpeg'
+import maripic from '../../assets/maripic.jpg'
+import amorpic from '../../assets/amorpic.jpg'
+import yanka from '../../assets/yanka.jpg'
 
 
 const Home = () => {
@@ -63,7 +66,9 @@ const Home = () => {
       <div className={styles.shopSection}>
         <h1> Featured 🧸ྀི</h1>
         <div className={styles.productGrid}>
-        {products.map((product) => (
+        {products
+          .filter((product) => product.id >= 1 && product.id <= 3)
+          .map((product) => (
             <Link
               key={product.id}
               to={`/itemdescription/${product.id}`}
@@ -73,11 +78,11 @@ const Home = () => {
               <p className={styles.productName}>{product.name}</p>
               <p className={styles.productPrice}>₱{product.price}</p>
             </Link>
-          ))}   
-        </div>
+          ))}
+      </div>
         <Link to="/shop">
-          <button className={styles.shopButton}>See Full Shop</button>
-        </Link>
+        <button className={styles.shopButton}>See Full Shop</button>
+      </Link>
       </div>
 
       {/* CELEBRITY FEATURES */}
@@ -126,17 +131,17 @@ const Home = () => {
         <div className={styles.aboutImages}>
           <div className={styles.topRow}>
             <div className={styles.imageCard}>
-              <img src={hanni} alt="Hanni" />
+              <img src={maripic} alt="Hanni" />
               <p>Mari</p>
             </div>
             <div className={styles.imageCard}>
-              <img src={hanni} alt="Bianca" />
+              <img src={yanka} alt="Bianca" />
               <p>Bianca</p>
             </div>
           </div>
           <div className={styles.bottomRow}>
             <div className={styles.imageCard}>
-              <img src={hanni} alt="Mari" />
+              <img src={amorpic} alt="Mari" />
               <p>Amor</p>
             </div>
           </div>
