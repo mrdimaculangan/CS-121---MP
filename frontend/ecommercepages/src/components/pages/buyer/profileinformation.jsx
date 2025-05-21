@@ -1,5 +1,6 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useCart } from 'react-use-cart'; 
 import styles from './profileinformation.module.css';
 import Transparent from '../../assets/transparent.png';
 import Flower from '../../assets/flower.png';
@@ -7,20 +8,19 @@ import Navbar from './navbar';
 
 const ProfileInformation = () => {
   const navigate = useNavigate();
+  const { emptyCart } = useCart();
   const [user, setUser] = useState(null);
 
   const token = localStorage.getItem('token');
   const storedUsername = localStorage.getItem('username');
 
   useEffect(() => {
-    // Redirect if not logged in
     if (!token) {
       navigate('/login');
       return;
     }
 
-  // fetch all users first then find which one is active
-  const fetchUser = async () => {
+    const fetchUser = async () => {
       try {
         const res = await fetch('http://localhost:8000/api/users/', {
           headers: {
@@ -28,10 +28,10 @@ const ProfileInformation = () => {
           },
         });
 
-  const users = await res.json();
-  const matched = users.find((u) => u.username === storedUsername);
-  
-  if (matched) {
+        const users = await res.json();
+        const matched = users.find((u) => u.username === storedUsername);
+
+        if (matched) {
           setUser(matched);
         } else {
           alert("User not found. You may need to log in again.");
@@ -49,6 +49,7 @@ const ProfileInformation = () => {
   const handleLogout = () => {
     localStorage.removeItem('token');
     localStorage.removeItem('username');
+    emptyCart(); 
     navigate('/login');
   };
 
